@@ -14,13 +14,16 @@ const theme = extendTheme({
     styles: {
         global: {
             body: {
-                // bg
+                color: '#313131',
             }
         }
     },
     colors: {
-        over: {
-            100: '#d9d9d9'
+        pink: {
+            main: '#EF518B'
+        },
+        purple: {
+            main: '#7851A2'
         }
     }
 })
