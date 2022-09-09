@@ -327,7 +327,7 @@ const swordBoyLeftFoot = keyframes`
 70% { transform: translate(375%, -145%) rotate(10deg) scale(2); }
 100% { transform: translate(350%, -150%) rotate(20deg) scale(2); }
 `;
-export const SwordBoy = () => {
+export const SwordBoy = ({size}) => {
   const prefersReducedMotion = usePrefersReducedMotion();
   const swordBoyIdle = prefersReducedMotion
     ? undefined
@@ -343,7 +343,7 @@ export const SwordBoy = () => {
     ? undefined
     : `${swordBoyLeftFoot} infinite 5s linear`;
   return (
-    <Box animation={swordBoyIdle} pos={"relative"} w={"5vw"} >
+    <Box animation={swordBoyIdle} pos={"relative"} w={size} >
       <Image
         src="/assets/img/swordBoy/head.svg"
         mx="auto"
@@ -403,11 +403,11 @@ const flowerLeftFoot = keyframes`
 0% { transform: translate(300%, 250%) rotate(20deg) scale(2); }
 40% { transform: translate(310%, 260%) rotate(5deg) scale(2);  }
 70% { transform: translate(315%, 265%) rotate(10deg) scale(2); }
-100% { transform: translate(310%, 250%) rotate(20deg) scale(2); }
+100% { transform: translate(300%, 250%) rotate(20deg) scale(2); }
 `;
 
 
-export const FlowerGirl = () => {
+export const FlowerGirl = ({size}) => {
   const prefersReducedMotion = usePrefersReducedMotion();
   const flowerIdle = prefersReducedMotion
     ? undefined
@@ -423,7 +423,7 @@ export const FlowerGirl = () => {
     ? undefined
     : `${flowerLeftFoot} infinite 5s linear`;
   return (
-    <Box animation={flowerIdle} pos={"relative"} w={"5vw"} >
+    <Box animation={flowerIdle} pos={"relative"} w={size} >
       <Image
         src="/assets/img/girlFlower/head.svg"
         mx="auto"
@@ -466,7 +466,29 @@ export const FlowerGirl = () => {
   );
 };
 
+export const Star = ({num}) => {
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const idleMove = prefersReducedMotion
+    ? undefined
+    : `${idle} infinite 4s linear`;
+  return (
+    <Box animation={idleMove} >
+      <Image src={`/assets/img/star${num}.svg`} />
+    </Box>
+  )
+}
 
+export const Card = ({card, size}) => {
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const idleMove = prefersReducedMotion
+    ? undefined
+    : `${idle} infinite 4s linear`;
+  return (
+    <Box animation={idleMove} w={size}>
+      <Image src={`/assets/img/boyWithCard/${card}.svg`} w={'100%'}/>
+    </Box>
+  )
+}
 
 export const BoyWithCard = () => {
   const prefersReducedMotion = usePrefersReducedMotion();
@@ -527,3 +549,5 @@ export const BoyWithCard = () => {
     </Box>
   );
 };
+
+

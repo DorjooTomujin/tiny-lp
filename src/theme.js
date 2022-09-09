@@ -17,13 +17,23 @@ const theme = extendTheme({
                 color: '#313131',
             }
         }
-    },
+    }, 
     colors: {
         pink: {
             main: '#EF518B'
         },
         purple: {
-            main: '#7851A2'
+            main: '#7851A2',
+            primary: '#51126C'
+        },
+        green: {
+            main: '#55C595'
+        },
+        black: {
+            main: '#1c1d28'
+        },
+        gray: {
+            main: '#525560'
         }
     }
 })
