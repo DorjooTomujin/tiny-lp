@@ -66,9 +66,9 @@ export const GridCard = ({icon, text1, text2, list, index}) => {
             </Box>
             <Box h={4}/>
             <List spacing={3} >
-                {list && list.map((l) => {
+                {list && list.map((l, i) => {
                     return (
-                        <ListItem>
+                        <ListItem key={i}>
                             <HStack alignItems={'start'}>
 
                             <Box>
