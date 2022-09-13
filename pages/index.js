@@ -131,7 +131,7 @@ export default function Home() {
         </VStack>
       </ChakraBox>
 
-<Image src="/assets/img/clouds/cloud2.svg" display={['none', 'none', 'none', 'block', 'block']} pos={'absolute'} bottom={0} top={[0, 0, 0, 'calc(100vh - 12px)', 'calc(100vh - 15px)']} left={0} right={0} zIndex={'-1'} h={[0, 0, 0, 'auto', 'calc(100% - 100vh - 5px)']} w='full'/>
+<Image src="/assets/img/clouds/cloud2.svg" display={['none', 'none', 'none', 'block', 'block']} pos={'absolute'} bottom={0} top={['calc(100vh - 15px)', 'calc(100vh - 15px)', 'calc(100vh - 15px)', 'calc(100vh - 12px)', 'calc(100vh - 15px)']} left={0} right={0} zIndex={'-1'} h={['calc(100% - 100vh - 5px)', 'calc(100% - 100vh - 5px)', 'calc(100% - 100vh - 5px)', 'auto', 'calc(100% - 100vh - 5px)']} w='full' objectFit={'cover'}/>
 
       <VStack maxW={"1200px"} id={'about'} py={[10,10,16,20,20]} px={[5,5,5,5,0,0]}>
         <ButtonCard />
