@@ -45,7 +45,7 @@ export const BoyArt = () => {
     ? undefined
     : `${leftFootMove} infinite 5s linear`;
   return (
-    <Box animation={boyIdle} pos={"relative"} w={"10vw"}>
+    <Box animation={boyIdle} pos={"relative"} w={['40vw', '25vw', '20vw', '15vw', '10vw']} >
       <Image
         src="/assets/img/boy/head.svg"
         animation={boyMoveHead}
@@ -117,7 +117,7 @@ export const RobotArt = () => {
     ? undefined
     : `${robotLeftFoot} infinite 5s linear`;
   return (
-    <Box animation={robotIdle} pos={"relative"} w={"10vw"}>
+    <Box animation={robotIdle} pos={"relative"} w={['40vw', '25vw', '20vw', '15vw', '10vw']}>
       <Image
         src="/assets/img/robot/head.svg"
         mx="auto"
@@ -196,7 +196,7 @@ export const NokiaBoy = () => {
     ? undefined
     : `${nokiaRightFoot} infinite 5s linear`;
   return (
-    <Box animation={nokiaIdle} pos={"relative"} w={"5vw"} >
+    <Box animation={nokiaIdle} pos={"relative"} w={['20vw', '13vw', '10vw', '8vw', '5vw']} >
       <Image
         src="/assets/img/nokiaBoy/head.svg"
         mx="auto"
@@ -267,7 +267,7 @@ export const Girl = () => {
     ? undefined
     : `${girlLeftFoot} infinite 5s linear`;
   return (
-    <Box animation={girlIdle} pos={"relative"} w={"3vw"} >
+    <Box animation={girlIdle} pos={"relative"} w={['16vw', '12vw', '9vw', '6vw', '3vw']} >
       <Image
         src="/assets/img/girl/head.svg"
         mx="auto"

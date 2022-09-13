@@ -64,47 +64,51 @@ const bounceValue = {
 
 export default function Home() {
   return (
-    <VStack bgPos={'center'} zIndex={10} pos={'relative'} bgRepeat={'no-repeat'} bgSize={'cover'} bgImage={'/assets/img/clouds/cloud2.svg'}>
+    <VStack bgPos={'center'} overflow='hidden' zIndex={10}  bgRepeat={'no-repeat'} bgSize={'cover'}   >
+      
+
       <ChakraBox
 
         overflow={"hidden"}
         pos="relative"
-        h={'130vh'}
+        h={'100vh'}
         zIndex={'100'}
-        bgPos={"center"}
-        bgRepeat="no-repeat"
-        bgSize={"cover"}
-        w={"full"}
-        bgImage={"/assets/img/clouds/cloud1.svg"}
+        top={0}
+        w={"100vw"}
         display="flex"
         justifyContent={"center"}
         alignItems="center"
       >
-        <ChakraBox animate={{left: '10%' , top: '50%'}} transition={{delay: 0.5, duration: 0.5}} initial={{left: '-1000px', top: '200%'}} pos={"absolute"}  >
+       <Box>
+        <Box pos={'absolute'} inset={0} overflow='hidden' zIndex='-1' w='full' h='full'>
+          <Image src="/assets/img/clouds/cloud1.svg" objectFit={'cover'} w='full' h='full'/>
+        </Box>
+       <ChakraBox animate={{left: 'calc(37% - 10vw - 15vh)' , top: 'calc(80% - 15vw)'}} viewport={{once: true}} transition={{delay: 0.5, duration: 0.5}} initial={{left: '-1000px', top: '200%'}} pos={"absolute"}  >
           <BoyArt />
         </ChakraBox>
-        <ChakraBox animate={{left: '80%' , top: '50%'}} transition={{delay: 0.5, duration: 0.5}} initial={{left: '200%', top: '200%'}} pos={"absolute"} >
+        <ChakraBox animate={{left: 'calc(55% + 20vw )' , top: 'calc(80% - 15vw)'}} viewport={{once: true}} transition={{delay: 0.5, duration: 0.5}} initial={{left: '200%', top: '200%'}} pos={"absolute"} >
           <RobotArt />
         </ChakraBox>
-        <ChakraBox animate={{left: '15%' , top: '8%'}} transition={{delay: 1, duration: 0.5}} initial={{left: '-200%', top: '-200%'}} pos={"absolute"} >
+       </Box>
+        <ChakraBox animate={{left: '15%' , top: '8%'}} viewport={{once: true}} transition={{delay: 1, duration: 0.5}} initial={{left: '-200%', top: '-200%'}} pos={"absolute"} >
           <NokiaBoy />
         </ChakraBox>
-        <ChakraBox animate={{left: '70%' , top: '10%'}} transition={{delay: 1, duration: 0.5}} initial={{left: '200%', top: '200%'}}  pos={"absolute"} >
+        <ChakraBox animate={{left: '70%' , top: '10%'}} viewport={{once: true}} transition={{delay: 1, duration: 0.5}} initial={{left: '200%', top: '200%'}}  pos={"absolute"} >
           <Girl />
         </ChakraBox>
-        <ChakraBox animate={{left: '75%' , top: '20%'}} transition={{delay: 1.5, duration: 0.5}} initial={{left: '200%'}}  pos={"absolute"} >
-          <SwordBoy size={"5vw"} />
+        <ChakraBox animate={{left: '75%' , top: 'calc(30% - 5vw)'}} viewport={{once: true}}  transition={{delay: 1.5, duration: 0.5}} initial={{left: '200%'}}  pos={"absolute"} >
+          <SwordBoy size={['20vw', '13vw', '10vw', '8vw', '5vw']} />
         </ChakraBox>
-        <ChakraBox animate={{left: '30%' , top: '30%'}} transition={{delay: 1.5, duration: 0.5}} initial={{left: '-150%'}}  pos={"absolute"} >
-          <FlowerGirl size={"5vw"} />
+        <ChakraBox animate={{left: 'calc(37%  - 15vh)' , top: 'calc(35% - 5vw)'}} viewport={{once: true}}  transition={{delay: 1.5, duration: 0.5}} initial={{left: '-150%'}}  pos={"absolute"} >
+          <FlowerGirl size={['20vw', '13vw', '10vw', '8vw', '5vw']} />
         </ChakraBox>
-        <VStack mx="auto" maxW={"18%"}>
+        <VStack mx="auto" maxW={['80%', '55%', '35%', '30%',"18%"]}>
           <ChakraBox animate={{scale: 1, opacity: 1}} initial={{scale: 0.1, opacity: 0.1}}><Image src="/assets/img/tiny-logo.svg" /></ChakraBox>
           <ChakraBox animate={{x: '0', opacity: 1}} initial={{x:'-100%' ,opacity: 0}} transition={{delay: 0.5}}><Text lineHeight={1.1} fontWeight="600" textAlign={"center"}>
             Tiny Battle is a world where everyone is constantly playing,
             learning and earning. There are always many battles in Tiny World.
           </Text></ChakraBox>
-          <Box h={"10vh"} />
+          <Box h={["3vh", '5vh', '8vh', '10vh', '10vh']} />
           <ChakraBox animate={{x: '0', opacity: 1}} initial={{x:'100%' ,opacity: 0}} transition={{delay: 1}}>
           <DefaultBtn text={"Join Discord"} bg="pink.main" icon="discord.svg" href={'https://discord.gg/J6w2XKwX'}  />
           </ChakraBox>
@@ -119,20 +123,24 @@ export default function Home() {
             -3px -3px 0 #fff;"
             fontWeight="bold"
             fontSize={"24px"}
+            whiteSpace='nowrap'
             >
             Soft Launch Mongolia
           </Text>
             </ChakraBox>
         </VStack>
       </ChakraBox>
-      <VStack maxW={"1200px"} id={'about'} py={20}>
+
+<Image src="/assets/img/clouds/cloud2.svg" display={['none', 'none', 'none', 'block', 'block']} pos={'absolute'} bottom={0} top={[0, 0, 0, 'calc(100vh - 12px)', 'calc(100vh - 15px)']} left={0} right={0} zIndex={'-1'} h={[0, 0, 0, 'auto', 'calc(100% - 100vh - 5px)']} w='full'/>
+
+      <VStack maxW={"1200px"} id={'about'} py={[10,10,16,20,20]} px={[5,5,5,5,0,0]}>
         <ButtonCard />
-        <Box py={20} />
-        <ChakraBox whileInView={{y: 100, scale: 1}} initial={{y: 0,scale: 0.1}} transition={{y: bounceValue}}>
+        <Box py={[0,10,16,20,20]} />
+        <ChakraBox whileInView={{y: 100, scale: 1}} display={['none', 'block']} viewport={{once: true}}  initial={{y: 0,scale: 0.1}} transition={{y: bounceValue}}>
         <Image src="/assets/img/boyWithCoin.svg" />
         </ChakraBox>
       </VStack>
-      <VStack maxW={"1200px"} py={20}>
+      <VStack maxW={"1200px"} py={[20,10,16,20,20]} >
         <DefaultCard
           heading={"Fight your friends with your knowledge!"}
           text={
@@ -145,17 +153,18 @@ export default function Home() {
           justifyContent="space-between"
           px={16}
           pos="relative"
-          transform={"translateY(-40%)"}
+          transform={["translateY(-50%)", "translateY(-50%)", "translateY(-60%)", "translateY(-60%)", "translateY(-60%)"]}
         >
-          <ChakraBox whileInView={{x:0 ,y: 0, scale: 1}} initial={{x:-300, y: 20,scale: 0.8}} transition={{y: bounceValue}}>
-            <FlowerGirl size={"10vw"} />
+          <ChakraBox whileInView={{x:0 ,y: 0, scale: 1}} viewport={{once: true}}  initial={{x:-300, y: 20,scale: 0.8}} transition={{y: bounceValue}} display='flex'>
+            <FlowerGirl size={["25vw", '20vw', '18vw', '15vw', '13vw']} />
+            <Box w={20}/>
           </ChakraBox>
-          <ChakraBox whileInView={{x:0 ,y: 0, scale: 1}} initial={{x:300, y: 20,scale: 0.8}} transition={{y: bounceValue}}>
-            <SwordBoy size={"7vw"} />
+          <ChakraBox whileInView={{x:0 ,y: 0, scale: 1}} viewport={{once: true}}  initial={{x:300, y: 20,scale: 0.8}} transition={{y: bounceValue}}>
+            <SwordBoy size={["20vw", '18vw', '15vw', '13vw', '10vw']} />
           </ChakraBox>
         </HStack>
       </VStack>
-      <VStack maxW={"1200px"} py={20}>
+      <VStack maxW={"1200px"} py={[10,10,16,20,20]}>
         <DefaultCard
           heading={"Confirmed by learning objectives"}
           text={
@@ -168,26 +177,26 @@ export default function Home() {
           justifyContent="space-between"
           px={16}
           pos="relative"
-          transform={"translateY(-65%)"}
+          transform={["translateY(-55%)", "translateY(-45%)", "translateY(-55%)","translateY(-65%)", "translateY(-65%)"]}
         >
           <Box>
-            <ChakraBox whileInView={{opacity:1, x: '10%', scale: 1}} initial={{opacity: 0.1, scale: 0.1}} transition={{delay: 0.3}} >
+            <ChakraBox whileInView={{opacity:1, x: '10%', scale: 1}} viewport={{once: true}}  initial={{opacity: 0.1, scale: 0.1}} transition={{delay: 0.3}} display={['none', 'none', 'none', 'block', 'block']}>
               <Star num="" />
             </ChakraBox>
             <Box h={10} />
-            <ChakraBox whileInView={{opacity:1,x: '-60%',scale: 1}} initial={{opacity: 0.1, scale: 0.1 , x: '-60%',}} transition={{delay: 0.6}}>
+            <ChakraBox whileInView={{opacity:1,x: '-60%',scale: 1}} viewport={{once: true}}  initial={{opacity: 0.1, scale: 0.1 , x: '-60%',}} transition={{delay: 0.6}}>
               <Star num={"2"} />
             </ChakraBox>
-            <ChakraBox whileInView={{opacity:1, scale: 1, x: '50%',}} initial={{opacity: 0.1, scale: 0.1, x: '50%',}} transition={{delay: 0.9}}>
+            <ChakraBox whileInView={{opacity:1, scale: 1, x: '50%',}} viewport={{once: true}}  initial={{opacity: 0.1, scale: 0.1, x: '50%',}} transition={{delay: 0.9}}>
               <Star num={"3"} />
             </ChakraBox>
           </Box>
-          <Box>
-            <ChakraBox whileInView={{opacity:1, scale: 1, x: '115%'}} initial={{opacity: 0.1, x: '115%', scale: 0.1}} transition={{delay: 0.3}}>
+          <Box justifyContent={'center'} pos='relative' left={16} alignItems='end' display='flex' flexDir={'column'}>
+            <ChakraBox whileInView={{opacity:1, scale: 1, x: '15%'}} viewport={{once: true}}  initial={{opacity: 0.1, x: '115%', scale: 0.1}} transition={{delay: 0.3}}>
               <Star num={"1"} />
             </ChakraBox>
             <Box h={16} />
-            <Box>
+            <Box w={["40vw", '30vw', '30vw', '25vw', '17vw']}>
               <Image src="/assets/img/studentBoy.svg" />
             </Box>
           </Box>
@@ -206,28 +215,28 @@ export default function Home() {
           justifyContent="space-between"
           px={16}
           pos="relative"
-          transform={"translateY(-60%)"}
+          transform={["translateY(-25%)", "translateY(-25%)","translateY(-35%)", "translateY(-60%)", "translateY(-60%)"]}
         >
-          <ChakraBox whileInView={{opacity:1, scale: 1, x: '-30%'}} initial={{opacity: 0.1, x: '-30%', scale: 0.1}} transition={{delay: 0.3}} transform={"translateX(-30%)"}>
-            <Card size={"13vw"} card={"main"} />
+          <ChakraBox whileInView={{opacity:1, scale: 1, x: '-40%'}}  initial={{opacity: 0.1, x: '-40%', scale: 0.1}} transition={{delay: 0.3}}  viewport={{once: true}}>
+            <Card size={["40vw", '30vw', '30vw', '25vw', '17vw']} card={"main"} />
           </ChakraBox>
           <ChakraBox>
-            <ChakraBox whileInView={{opacity:1, scale: 1, x: '-20%'}} initial={{opacity: 0.1, x: '-20%', scale: 0.1}} transition={{delay:'0.3'}}>
-              <Card card={"fastfood"} size={"5vw"} />
+            <ChakraBox whileInView={{opacity:1, scale: 1, x: '-10%'}}  initial={{opacity: 0.1, x: '-20%', scale: 0.1}} transition={{delay:'0.3'}} viewport={{once: true}}>
+              <Card card={"fastfood"} size={["15vw", '12vw', '10vw', '8vw', '5vw']} />
             </ChakraBox>
-            <ChakraBox whileInView={{opacity:1, scale: 1, x: '55%'}} initial={{opacity: 0.1, x: '55%', scale: 0.1}} transition={{delay:'0.6'}}>
-              <Card card={"cloth"} size={"7vw"} />
+            <ChakraBox whileInView={{opacity:1, scale: 1, x: '55%'}} initial={{opacity: 0.1, x: '55%', scale: 0.1}} transition={{delay:'0.6'}} viewport={{once: true}} >
+              <Card card={"cloth"} size={["20vw", '16vw', '13vw', '10vw', '7vw']} />
             </ChakraBox>
-            <ChakraBox whileInView={{opacity:1, scale: 1, x: '-40%'}} initial={{opacity: 0.1, x: '-40%', scale: 0.1}} transition={{delay:'0.9'}}>
-              <Card card={"cactus"} size={"4vw"} />
+            <ChakraBox whileInView={{opacity:1, scale: 1, x: '-40%'}}  initial={{opacity: 0.1, x: '-40%', scale: 0.1}} transition={{delay:'0.9'}} viewport={{once: true}} >
+              <Card card={"cactus"} size={["11vw", '9vw', '8vw', '7vw', '4vw']} />
             </ChakraBox>
-            <ChakraBox whileInView={{opacity:1, scale: 1, x: '-130%', y:'-100%'}} initial={{opacity: 0.1, x: '-130%', y:'-100%', scale: 0.1}} transition={{delay:'1.2'}}>
-              <Card card={"nokia"} size={"3vw"} />
+            <ChakraBox whileInView={{opacity:1, scale: 1, x: '-130%', y:'-100%'}} viewport={{once: true}} initial={{opacity: 0.1, x: '-130%', y:'-100%', scale: 0.1}} transition={{delay:'1.2'}}>
+              <Card card={"nokia"} size={["9vw", '7vw', '6vw', '5vw', '3vw']} />
             </ChakraBox>
           </ChakraBox>
         </HStack>
       </VStack>
-      <VStack id={'gameplay'} maxW={"1000px"} pb={20} px={12}>
+      <VStack id={'gameplay'} maxW={"1000px"} pb={20} px={[5,5,5,12,12]}>
         <Title title={"Gameplay"} />
         <Box h={10} />
         <Box w={"100%"} borderRadius={12} overflow="hidden">
@@ -236,13 +245,13 @@ export default function Home() {
           </video>
         </Box>
       </VStack>
-      <VStack id={'token'} maxW={"1200px"} py={20}>
+      <VStack id={'token'} maxW={"1200px"} py={[10,10,16,20,20]} px={[5,5,5,5,0,0]}>
           <BoxCard/>
       </VStack>
-      <VStack id={'roadmap'} maxW={'90%'} py={20}>
+      <VStack id={'roadmap'} maxW={'90%'} py={[10,10,16,20,20]}>
           <Title title={'Roadmap'}/>
           <Box h={10} />
-          <Grid gridTemplateColumns={'repeat(5, 1fr)'} gap={10}>
+          <Grid gridTemplateColumns={['repeat(1, 1fr)','repeat(2, 1fr)','repeat(3, 1fr)','repeat(3, 1fr)','repeat(5, 1fr)','repeat(5, 1fr)']} gap={10}>
             <GridItem>
               <GridCard icon={'ark'} text1={'Q4'} text2={'2021'} list={actList} index={0}/>
             </GridItem>
@@ -263,7 +272,7 @@ export default function Home() {
       <VStack alignItems={'start'} maxW={'1500px'} px={4} mx='auto' pt={20} pb={40}>
         <Title title={'Read Our News'}/>
         <Box h={10}/>
-        <Grid gap={6} gridTemplateColumns={'repeat(4, 1fr)'}>
+        <Grid gap={6} gridTemplateColumns={[['repeat(1, 1fr)','repeat(2, 1fr)','repeat(2, 1fr)','repeat(4, 1fr)','repeat(4, 1fr)','repeat(4, 1fr)']]}>
           <GridItem>
             <ReadCard img={'news1.png'} title='Don’t destroy greenery and don’t spoil scenery' text={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim'} href={'https://www.instagram.com/p/CiAFtHYrcxf/'}/>
           </GridItem>
