@@ -27,7 +27,7 @@ export default function Footer  ()  {
                 </VStack>
                 <VStack gap={5} alignItems={'start'} pt={'50px'}  display={['none', 'none', 'none', 'flex', 'flex', 'flex']}>
                     <Link _hover={{textDecoration:'none'}} fontWeight={'600'}>Whitepaper</Link>
-                    <Link _hover={{textDecoration:'none'}}>1.0</Link>
+                    <Link _hover={{textDecoration:'none'}} target={'_blank'} href='https://tomujin-digital.gitbook.io/welcome-to-gitbook/'>1.0</Link>
                 </VStack>
                 <VStack gap={5} alignItems={'start'} pt={'50px'}  display={['none', 'none', 'flex', 'flex', 'flex', 'flex']}>
                     <Link _hover={{textDecoration:'none'}} fontWeight={'600'}>Social channels</Link>
