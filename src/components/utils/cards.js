@@ -1,4 +1,4 @@
-import { border, Box, chakra, Heading, HStack, Image, Link, List, ListIcon, ListItem, shouldForwardProp, Text, VStack } from "@chakra-ui/react"
+import { AspectRatio, border, Box, chakra, Heading, HStack, Image, Link, List, ListIcon, ListItem, shouldForwardProp, Text, VStack } from "@chakra-ui/react"
 import { DefaultBtn } from "./buttons"
 import {BsFillCircleFill} from 'react-icons/bs'
 import { isValidMotionProp, motion } from "framer-motion";
@@ -15,7 +15,7 @@ export const ButtonCard = () => {
             <Heading w={['100%','100%','70%','70%','70%']} mx='auto' textAlign={'center'} mb={8} fontWeight={700} fontSize={'32px'}>
                 Earn real life and virtual rewards for learning.</Heading>
             <Text textAlign={'center'} w={['100%','100%','70%','70%','70%']} mx='auto'>You can play TinyBattle, fight monsters in many disciplines, win and be rewarded with cryptocurrency.</Text>
-            <Box pos={'absolute'} bottom='0%' transform={'translate(-50%, 50%)'} left='50%'><DefaultBtn text={'Whitepaper'} bg='pink.main' icon='' /></Box>
+            <Box pos={'absolute'} bottom='0%' transform={'translate(-50%, 50%)'} left='50%'><DefaultBtn text={'Whitepaper'} bg='pink.main' icon='' href={'https://tomujin-digital.gitbook.io/welcome-to-gitbook/'} /></Box>
         </ChakraBox>
     )
 }
@@ -88,9 +88,11 @@ export const GridCard = ({icon, text1, text2, list, index}) => {
 
 export const ReadCard = ({img, title, text, href}) => {
     return (
-        <Link href={href} _hover={{textDecor:'none'}} target={'_blank'}>
-            <Box borderRadius={8} overflow='hidden' w={'full'}>
-                <Image src={`/assets/img/${img}`} objectFit={'cover'} w={'full'}/>
+        <Link href={href} _hover={{textDecor:'none'}} target={'_blank'} >
+            <Box w='full' borderRadius={12} overflow='hidden'>
+            <AspectRatio borderRadius={8} ratio={ 3 / 2}>
+                <Image src={`${img}`} objectFit={'cover'} w={'full'} h='full'/>
+            </AspectRatio>
             </Box>
             <Text mb={2} mt={4} fontSize={'20px'} color={'black.main'}>{title}</Text>
             <Text  color={'gray.main'}>{text}</Text>

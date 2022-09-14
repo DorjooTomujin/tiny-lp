@@ -12,8 +12,8 @@ export default function Navbar () {
                 <Link href={'#roadmap'}  _hover={{textDecoration: 'none'}} display={['none', 'none', 'none', 'flex', 'flex']}>Roadmap</Link>
             </HStack>
              <HStack gap={6}>
-                <Button variant={'outline'} borderColor='#fff' _hover={{bg: 'purple.primary'}} display={['none', 'flex', 'flex', 'flex', 'flex']}>
-                    Whitepaper
+                <Button variant={'outline'} borderColor='#fff' _hover={{bg: 'purple.primary'}} display={['none', 'flex', 'flex', 'flex', 'flex']} >
+                    <Link href="https://tomujin-digital.gitbook.io/welcome-to-gitbook/" _hover={{textDecor: 'none'}} target='_blank'>Whitepaper</Link>
                 </Button>
                 <HStack gap={2}>
                 <Link href={'https://twitter.com/TinyBattle_game'} target={'_blank'}><AiOutlineTwitter size={25}/></Link>
