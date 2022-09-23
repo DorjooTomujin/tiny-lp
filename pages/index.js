@@ -172,8 +172,7 @@ export default function Home() {
             transition={{ delay: 0.5 }}
           >
             <Text lineHeight={1.1} fontWeight="600" textAlign={"center"}>
-              Tiny Battle is a world where everyone is constantly playing,
-              learning and earning. There are always many battles in Tiny World.
+              Tiny Battle -- a mobile game that gets you into the next version of you. Play, so you can learn and earn at the same time!
             </Text>
           </ChakraBox>
           <Box h={["3vh", "5vh", "8vh", "10vh", "10vh"]} />
@@ -183,7 +182,7 @@ export default function Home() {
             transition={{ delay: 1 }}
           >
             <DefaultBtn
-              text={"Join Discord"}
+              text={"Join Our Community"}
               bg="pink.main"
               icon="discord.svg"
               href={"https://discord.gg/J6w2XKwX"}
@@ -205,7 +204,7 @@ export default function Home() {
               fontSize={"24px"}
               whiteSpace="nowrap"
             >
-              Soft Launch Mongolia
+              Launching in October 2022
             </Text>
           </ChakraBox>
         </VStack>
@@ -298,9 +297,9 @@ export default function Home() {
       </VStack>
       <VStack maxW={"1200px"} py={[10, 10, 16, 20, 20]}>
         <DefaultCard
-          heading={"Confirmed by learning objectives"}
+          heading={"Backed by Official Cambridge Curricilum"}
           text={
-            "All of the questions you face meet international learning objective standards. So the knowledge you learn from your game will be valued in real life."
+            "All questions are Cambridge certified, so the learning is valuable in real life!"
           }
           icon={"book"}
         />

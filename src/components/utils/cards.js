@@ -10,11 +10,11 @@ const ChakraBox = chakra(motion.div, {
 export const ButtonCard = () => {
     return (
         <ChakraBox whileInView={{opacity: 1, scale: 1, }} initial={{opacity: 0, scale: 0.6}} transition={{type: "spring", duration: 0.8}} viewport={{once: true}} border={'1px #C5C5C5 solid'} pb={20} pt={12} px={[5,5,24,24,24]} borderRadius={30} mx="auto" maxW={'1000px'} w={'full'} pos='relative'>
-            <Heading textAlign={'center'} w={['100%','100%','70%','70%','70%']} mx='auto' fontWeight={700} fontSize={'32px'}>Play a battle game to learn.
+            <Heading textAlign={'center'} w={['100%','100%','70%','70%','70%']} mx='auto' fontWeight={700} fontSize={'32px'}>Play battles to learn.
             </Heading>
             <Heading w={['100%','100%','70%','70%','70%']} mx='auto' textAlign={'center'} mb={8} fontWeight={700} fontSize={'32px'}>
-                Earn real life and virtual rewards for learning.</Heading>
-            <Text textAlign={'center'} w={['100%','100%','70%','70%','70%']} mx='auto'>You can play TinyBattle, fight monsters in many disciplines, win and be rewarded with cryptocurrency.</Text>
+                Earn virtual and real-life rewards for your learning.</Heading>
+            <Text textAlign={'center'} w={['100%','100%','70%','70%','70%']} mx='auto'>Select your battle room and connect with players from all over the world! Test your knowledge and get rewarded for your wins.</Text>
             <Box pos={'absolute'} bottom='0%' transform={'translate(-50%, 50%)'} left='50%'><DefaultBtn text={'Whitepaper'} bg='pink.main' icon='' href={'https://tomujin-digital.gitbook.io/welcome-to-gitbook/'} /></Box>
         </ChakraBox>
     )
